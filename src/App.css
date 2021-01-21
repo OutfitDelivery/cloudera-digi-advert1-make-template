@@ -1,0 +1,129 @@
+ /*! minireset.css START */
+ html,
+ body,
+ p,
+ ol,
+ ul,
+ li,
+ dl,
+ dt,
+ dd,
+ blockquote,
+ figure,
+ fieldset,
+ legend,
+ textarea,
+ pre,
+ iframe,
+ hr,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 0;
+   padding: 0
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   font-size: 100%;
+   font-weight: normal
+ }
+
+ ul {
+   list-style: none
+ }
+
+ button,
+ input,
+ select,
+ textarea {
+   margin: 0
+ }
+
+ html {
+   box-sizing: border-box
+ }
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: inherit
+ }
+
+ img,
+ video {
+   height: auto;
+   max-width: 100%
+ }
+
+ iframe {
+   border: 0
+ }
+
+ table {
+   border-collapse: collapse;
+   border-spacing: 0
+ }
+
+ td,
+ th {
+   padding: 0
+ }
+
+ td:not([align]),
+ th:not([align]) {
+   text-align: left
+ }
+
+ /*! minireset.css END */
+
+ .App {
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+ }
+
+ .photo,
+ .code {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
+
+ .code {
+   background-image: url('assets/SquareOverlay.png');
+ }
+
+ @media (width: 1200px) and (height: 1200px) {
+   .photo {
+    bottom: 0%;
+   }
+
+   .code {
+     background-image: url('assets/SquareOverlay.png');
+   }
+
+ }
+
+ @media (width: 1320px) and (height: 691px) {
+   .photo {
+     left: 0%;
+   }
+
+   .code {
+     background-image: url('assets/CoverOverlay.png');
+   }
+ }
