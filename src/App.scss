@@ -1,0 +1,61 @@
+ blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+
+ $black: #000000;
+ $white: #ffffff;
+ $mint: #00a3af;
+ $dark-orange: #f96702;
+ $bright-orange: #ff8400;
+ $grey: #e6e6e6;
+ $slate: #305868;
+ $blue: #008cff;
+ $dark-grey: #828282;
+ $transparent: transparent;
+
+ html{
+   font-size: 16px;
+ }
+
+ .App {
+   position: relative;
+   overflow: hidden;
+   border: 1px solid $black;
+ }
+
+ .subheadline{
+   font-size: 1rem;
+ }
+
+h1{
+  font-family: "Neue Plak Text";
+  color: $white;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h2{
+  
+  font-family: "Neue Plak Text Semi Bold";
+  text-transform: uppercase;
+  color: $dark-grey;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h3{
+  font-family: 'Cloudera Display 100 Striped';
+  font-weight: normal;
+  line-height: 1;
+  color: $dark-orange;
+}
+
+ [data-width="600"][data-height="315"]{
+   
+
+ }
+
+
+
+
+ /*@media (width: 1200px) and (height: 1200px) {
+
+ }*/
