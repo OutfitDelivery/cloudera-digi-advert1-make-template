@@ -16,6 +16,7 @@ function App({
   
   return (
     <div className="App" style={appStyle} data-width={width} data-height={height}>
+      {contentType}
       <div className="placeholder" style={placeholderBkg}></div>
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
