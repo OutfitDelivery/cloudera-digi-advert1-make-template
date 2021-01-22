@@ -1,27 +1,98 @@
- blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+blockquote,
+body,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+iframe,
+legend,
+li,
+ol,
+p,
+pre,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 400;
+}
+ul {
+  list-style: none;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+iframe {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+td:not([align]),
+th:not([align]) {
+  text-align: left;
+}
 
- $black: #000000;
- $white: #ffffff;
- $mint: #00a3af;
- $dark-orange: #f96702;
- $bright-orange: #ff8400;
- $grey: #e6e6e6;
- $slate: #305868;
- $blue: #008cff;
- $dark-grey: #828282;
- $transparent: transparent;
+$black: #000000;
+$white: #ffffff;
+$mint: #00a3af;
+$dark-orange: #f96702;
+$bright-orange: #ff8400;
+$grey: #e6e6e6;
+$slate: #305868;
+$blue: #008cff;
+$dark-grey: #828282;
+$transparent: transparent;
 
- html{
-   font-size: 16px;
- }
+html {
+  font-size: 16px;
+}
 
- .App {
-   position: relative;
-   overflow: hidden;
-   border: 1px solid $black;
- }
+.App {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $black;
+}
 
- .placeholder{
+.placeholder {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -30,21 +101,22 @@
   left: 0;
   right: 0;
   bottom: 0;
- }
- 
- .subheadline{
-   font-size: 1rem;
- }
+  opacity: 0.3;
+}
 
-h1{
+.subheadline {
+  font-size: 1rem;
+}
+
+h1,
+.call-to-action {
   font-family: "Neue Plak Text";
   color: $white;
   font-weight: bold;
   line-height: 1;
 }
 
-h2{
-  
+h2 {
   font-family: "Neue Plak Text Semi Bold";
   text-transform: uppercase;
   color: $dark-grey;
@@ -52,21 +124,113 @@ h2{
   line-height: 1;
 }
 
-h3{
-  font-family: 'Cloudera Display 100 Striped';
+h3 {
+  font-family: "Cloudera Display 100 Striped";
   font-weight: normal;
   line-height: 1;
   color: $dark-orange;
 }
 
- [data-width="600"][data-height="315"]{
-   
+.text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*background: beige;*/
+}
 
- }
+.subheadline{
+  width: 100%;
+}
+
+.call-to-action {
+  border-radius: 1rem;
+}
+
+.call-to-action p {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.text-el{
+  visibility: hidden;
+}
+
+[data-text-type="subheadline"] .subheadline.text-el,
+[data-text-type="headline-1"] .headline.line-1.text-el,
+[data-text-type="headline-2"] .headline.line-2.text-el,
+[data-text-type="headline-3"] .headline.line-3.text-el,
+[data-text-type="headline-4"] .headline.line-4.text-el,
+[data-text-type="headline-5"] .headline.line-5.text-el,
+[data-text-type="display-line"] .display-line.text-el,
+[data-text-type="call-to-action"] .call-to-action.text-el{
+  visibility: visible;
+}
+
+[data-theme="1"] {
+  h1 {
+    color: $bright-orange;
+  }
+
+  .call-to-action {
+    background: $mint;
+    color: $white;
+  }
+}
 
 
 
 
- /*@media (width: 1200px) and (height: 1200px) {
+
+[data-width="600"][data-height="315"] {
+  .text-area {
+    margin-top: 5.5rem;
+    margin-left: 1.46rem;
+    max-height: 13rem;
+    width: 28rem;
+  }
+
+  .heading {
+    margin-bottom: 1.65rem;
+  }
+
+  h1 {
+    font-size: 1.82rem;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 0.32rem;
+  }
+
+  .call-to-action {
+    height: 1.7rem;
+    line-height: 1;
+    font-size: 0.65rem;
+    padding: 0.5rem 1.1rem 0.5rem;
+    letter-spacing: 0.1px;
+    max-width: 16rem;
+  }
+
+  .line-1 {
+    max-width: 26rem;
+  }
+
+  .line-2 {
+    width: 24rem;
+  }
+
+  .line-3 {
+    width: 22rem;
+  }
+
+  .line-4,
+  .line-5,
+  .display-line {
+    display: none;
+  }
+}
+
+/*@media (width: 1200px) and (height: 1200px) {
 
  }*/

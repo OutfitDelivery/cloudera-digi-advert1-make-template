@@ -11,19 +11,21 @@ function App({
     };
 
     const placeholderBkg = {
-      backgroundImage: `url(src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
+      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template/src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
     };
   
   return (
     <div className="App" style={appStyle} data-width={width} data-height={height}>
       <div className="placeholder" style={placeholderBkg}></div>
-      <div className="digi-advert-container" data-theme="{theme}" data-text-type="{contentType}">
+      <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
-        <div className="headline line-1 text-el" data-max-line="1"><h1>{headlineLine1}</h1></div>
-        <div className="headline line-2 text-el" data-max-line="1"><h1>{headlineLine2}</h1></div>
-        <div className="headline line-3 text-el" data-max-line="1"><h1>{headlineLine3}</h1></div>
-        <div className="headline line-4 text-el" data-max-line="1"><h1>{headlineLine4}</h1></div>
-        <div className="headline line-5 text-el" data-max-line="1"><h1>{headlineLine5}</h1></div>
+        <div className="heading">
+          <div className="headline line-1 text-el" data-max-line="1"><h1>{headlineLine1}</h1></div>
+          <div className="headline line-2 text-el" data-max-line="1"><h1>{headlineLine2}</h1></div>
+          <div className="headline line-3 text-el" data-max-line="1"><h1>{headlineLine3}</h1></div>
+          <div className="headline line-4 text-el" data-max-line="1"><h1>{headlineLine4}</h1></div>
+          <div className="headline line-5 text-el" data-max-line="1"><h1>{headlineLine5}</h1></div>
+        </div>
         <div className="display-line text-el" data-max-line="1"><h3>{displayLine}</h3></div>
         <div className="call-to-action text-el"><p data-max-line="1">{callToAction}</p></div>
       </div>
@@ -50,14 +52,14 @@ App.defaultProps = {
   height: 315, 
   theme: 1,
   contentType: "subheadline", 
-  subheadline: "Subheadline Here", 
-  headlineLine1: "", 
-  headlineLine2: "", 
-  headlineLine3: "", 
+  subheadline: "Analytics", 
+  headlineLine1: "Three ways to achieve", 
+  headlineLine2: "machine learning", 
+  headlineLine3: "excellence", 
   headlineLine4: "", 
   headlineLine5: "", 
   displayLine: "", 
-  callToAction: "",
+  callToAction: "Read the white paper",
 };
 
 export default App;
