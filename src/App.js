@@ -9,9 +9,14 @@ function App({
       width: `${width}px`,
       height: `${height}px`,
     };
+
+    const placeholderBkg = {
+      backgroundImage: `url(src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
+    };
   
   return (
     <div className="App" style={appStyle} data-width={width} data-height={height}>
+      <div className="placeholder" style={placeholderBkg}></div>
       <div className="digi-advert-container" data-theme="{theme}" data-text-type="{contentType}">
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
         <div className="headline line-1 text-el" data-max-line="1"><h1>{headlineLine1}</h1></div>
