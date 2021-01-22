@@ -51,7 +51,7 @@ App.defaultProps = {
   width: 600,
   height: 315, 
   theme: 1,
-  contentType: "subheadline", 
+  contentType: "heading-1", 
   subheadline: "Analytics", 
   headlineLine1: "Three ways to achieve", 
   headlineLine2: "machine learning", 
