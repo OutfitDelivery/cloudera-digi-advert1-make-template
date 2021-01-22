@@ -48,7 +48,10 @@ App.propTypes = {
   callToAction: PropTypes.string,
 };
 App.defaultProps = {
-  width: 600,
+  
+};
+
+  /*width: 600,
   height: 315, 
   theme: 1,
   contentType: "heading-3", 
@@ -59,7 +62,6 @@ App.defaultProps = {
   headlineLine4: "", 
   headlineLine5: "", 
   displayLine: "", 
-  callToAction: "Read the white paper",
-};
+  callToAction: "Read the white paper",*/
 
 export default App;
