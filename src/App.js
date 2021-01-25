@@ -15,8 +15,7 @@ function App({
     };
   
   return (
-    <div className="App" style={appStyle} data-width={width} data-height={height}>
-      {contentType}
+    <div className="App" style={appStyle} data-width={width} data-height={height} data-theme={theme}>
       <div className="placeholder" style={placeholderBkg}></div>
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
@@ -49,10 +48,7 @@ App.propTypes = {
   callToAction: PropTypes.string,
 };
 App.defaultProps = {
-  
-};
-
-  /*width: 600,
+  width: 600,
   height: 315, 
   theme: 1,
   contentType: "heading-3", 
@@ -63,6 +59,8 @@ App.defaultProps = {
   headlineLine4: "", 
   headlineLine5: "", 
   displayLine: "", 
-  callToAction: "Read the white paper",*/
+  callToAction: "Read the white paper",
+};
+
 
 export default App;
