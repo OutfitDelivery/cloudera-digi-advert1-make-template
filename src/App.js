@@ -11,12 +11,13 @@ function App({
     };
 
     const placeholderBkg = {
-      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template/src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
+      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
     };
   
   return (
-    <div className="App" style={appStyle} data-width={width} data-height={height} data-theme={theme}>
-      <div className="placeholder" style={placeholderBkg}></div>
+    <div className="App" data-theme={theme} style={appStyle}>
+    <div data-width={width} data-height={height}>
+      {/* <div className="placeholder" style={placeholderBkg}></div> */}
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
         <div className="heading">
@@ -29,6 +30,7 @@ function App({
         <div className="display-line text-el" data-max-line="1"><h3>{displayLine}</h3></div>
         <div className="call-to-action text-el"><p data-max-line="1">{callToAction}</p></div>
       </div>
+    </div>
     </div>
   );
 }
@@ -48,8 +50,8 @@ App.propTypes = {
   callToAction: PropTypes.string,
 };
 App.defaultProps = {
-  width: 600,
-  height: 315, 
+  width: 1080,
+  height: 1080, 
   theme: 1,
   contentType: "heading-3", 
   subheadline: "Analytics", 
