@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./App.scss";
+import "./css/App.scss";
+import "./css/theme1.scss";
+import "./css/theme2.scss";
+import "./css/theme3.scss";
+import "./css/theme4.scss";
+
 
 function App({
   width, height, theme, contentType, subheadline, headlineLine1, headlineLine2, headlineLine3, headlineLine4, headlineLine5, displayLine, callToAction}) {
@@ -17,7 +22,7 @@ function App({
   return (
     <div className="App" data-theme={theme} style={appStyle}>
     <div data-width={width} data-height={height}>
-      {/* <div className="placeholder" style={placeholderBkg}></div> */}
+      <div className="placeholder" style={placeholderBkg}></div>
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
         <div className="heading">

@@ -1,0 +1,87 @@
+@import "./colors.scss";
+
+blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}td:not([align]),th:not([align]){text-align:left}
+
+html {
+  font-size: 16px;
+}
+
+.App {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $black;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+}
+
+.subheadline {
+  font-size: 1rem;
+}
+
+h1,
+.call-to-action {
+  font-family: "Neue Plak Text";
+  color: $white;
+  font-weight: bold;
+  line-height: 1;
+}
+
+h2 {
+  font-family: "Neue Plak Text Semi Bold";
+  text-transform: uppercase;
+  color: $dark-grey;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h3 {
+  font-family: "Cloudera Display 100 Striped";
+  font-weight: normal;
+  line-height: 1;
+  color: $dark-orange;
+}
+
+.text-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*background: beige;*/
+}
+
+.subheadline{
+  width: 100%;
+}
+
+.call-to-action {
+  border-radius: 1rem;
+}
+
+.call-to-action p {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*.text-el{
+  visibility: hidden;
+}
+
+[data-text-type="subheadline"] .subheadline.text-el,
+[data-text-type="heading-1"] .headline.line-1.text-el,
+[data-text-type="heading-2"] .headline.line-2.text-el,
+[data-text-type="heading-3"] .headline.line-3.text-el,
+[data-text-type="heading-4"] .headline.line-4.text-el,
+[data-text-type="heading-5"] .headline.line-5.text-el,
+[data-text-type="display-line"] .display-line.text-el,
+[data-text-type="call-to-action"] .call-to-action.text-el{
+  visibility: visible;
+}*/
