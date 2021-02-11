@@ -24,16 +24,17 @@
       font-size: 0.85rem;
       margin-bottom: 0.5rem;
       max-width: 6.5rem;
-      line-height:0.9rem;
+      line-height:0.95rem;
     }
     .heading {
       margin-bottom: 0.313rem;
     }
     .heading .headline h1{
       font-size: 1.12rem;
-      color: $mint;
-      line-height: 1.23rem;
+      color: #00a3af;
+      line-height: 1.37rem;
       max-width: 8rem;
+      margin-top: -0.1rem;
     }
     .display-line {
       height: 3rem;
@@ -45,18 +46,20 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: $dark-orange;
+      background-color: #f96702;
       width: 6.25rem;
-      font-size: 0.65rem;
+      font-size: 0.57rem;
       height: 1.688rem;
       padding-bottom: 0.25rem;
       max-width: 8.0rem;
+      margin-top: 0.1rem;
+      letter-spacing: 0.05rem;
+      padding-top: 0.1rem;
     }
   }
   [data-width="300"][data-height="50"] {
     [data-theme="4"] {
       position: relative;
-      background-color: $slate;
       height: 100%;
       width: 100%;
     }
@@ -68,6 +71,7 @@
       justify-content: flex-end;
       padding-left: 6.125rem;
       max-height: 3rem;
+      padding-top: 0.65rem;
     }
     .subheadline {
       display: none;
@@ -81,7 +85,7 @@
       color: $white;
       padding-bottom: 0.063rem;
       max-width: 9.813rem;
-      line-height: 0.7rem;
+      line-height: 0.75rem;
     }
     .display-line {
       display: none;
@@ -100,19 +104,20 @@
   [data-width="300"][data-height="250"] {
     .text-area {
       position: relative;
-      padding-top: 4.25rem;
+      padding-top: 4.29rem;
       padding-left: 1.188rem;
       max-height: 227px;
     }
     .subheadline {
-      font-size: 0.80rem;
+      font-size: 0.75rem;
       margin-bottom: 0.313rem;
       max-width: 16.25rem;
+      letter-spacing: 0.03rem;
     }
     .heading .headline h1 {
       color: $mint;
       font-size: 1.467rem;
-      line-height: 1.55rem;
+      line-height: 1.58rem;
     }
     .heading {
       margin-bottom: 0.063rem;
@@ -133,13 +138,15 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
-      font-size: 0.645rem;
+      font-size: 0.59rem;
       width: 6.313rem;
       height: 1.688rem;
       display: flex;
       justify-content: center;
       align-items: center;
       padding-bottom: 0.188rem;
+      margin-bottom: 0.13rem;
+      letter-spacing: 0.03rem;
     }
   }
   [data-width="300"][data-height="600"] {
@@ -147,13 +154,15 @@
       position: relative;
       width: 18.75rem;
       max-height: 21.625rem;
-      padding-top: 6.063rem;
+      padding-top: 6.2rem;
       padding-left: 1.25rem;
     }
     .subheadline {
-      font-size: 0.85rem;
+      font-size: 0.81rem;
       margin-bottom: 0.313rem;
       max-width: 15.938rem;
+      letter-spacing: 0.03rem;
+
     }
     .heading .headline h1{
       font-size: 1.58rem;
@@ -183,7 +192,6 @@
   [data-width="320"][data-height="50"] {
     [data-theme="4"] {
       position: relative;
-      background-color: $slate;
       height: 100%;
       width: 100%;
     }
@@ -194,6 +202,7 @@
       align-items: center;
       justify-content: flex-end;
       padding-left: 6.125rem;
+      padding-top: 0.66rem;
     }
     .subheadline {
       display: none;
@@ -213,27 +222,29 @@
       display: none;
     }
     .call-to-action {
-      font-size: 0.59rem;
+      font-size: 0.55rem;
       max-width: 3.375rem;
       border-bottom: 0.063rem solid $white;
       padding-bottom: 0.063rem;
       border-radius: 0px;
       border-radius: 0px;
       margin: 0.063rem 8px;
-      margin-bottom: 0.188rem;
+      margin-bottom: 0.1rem;
+      letter-spacing: 0.03rem;
     }
   }
   [data-width="540"][data-height="200"] {
     .text-area {
       position: relative;
-      padding-top: 1.25rem;
+      padding-top: 2.55rem;
       padding-left: 1.188rem;
       max-height: 11.063rem;
     }
     .subheadline {
-      font-size: 0.857rem;
+      font-size: 0.83rem;
       margin-bottom: 0.313rem;
       max-width: 24.813rem;
+      letter-spacing: 0.02rem;
     }
     .heading .headline h1 {
       color: $mint;
@@ -302,18 +313,19 @@
       align-items: center;
       padding-bottom: 0.188rem;
       margin-left: 0.125rem;
+      margin-top: -2rem;
     }
   }
   [data-width="640"][data-height="480"] {
     .text-area {
       position: relative;
       padding-left: 1.688rem;
-      max-height: 21.875rem;
+      max-height: 21.875rem;padding-top:8.05rem
     }
     .subheadline {
-      font-size: 1.2rem;
-      margin-bottom: 0.375rem;
-      letter-spacing: 0.006rem;
+      font-size: 1.15rem;
+      margin-bottom: 0.55rem;
+      letter-spacing: 0.04rem;
     }
     .heading .headline h1 {
       color: $mint;
@@ -481,7 +493,7 @@
   [data-width="1024"][data-height="512"] {
     .text-area {
       position: relative;
-      padding-top: 3.9rem;
+      padding-top: 6.69rem;
       padding-left: 2.625rem;
       max-height: 29.125rem;
     }
@@ -525,12 +537,13 @@
       letter-spacing: 0.125rem;  
       margin-left: 0.188rem; 
       max-width: 32.5rem;  
+      margin-top: 0.15rem;
     }
   }
   [data-width="1080"][data-height="1080"] {
     .text-area {
       position: relative;
-      padding-top: 2.125rem;
+      padding-top: 22.9rem;
       padding-left: 3.063rem;
       max-height: 46.75rem;
     }
@@ -570,13 +583,15 @@
       align-items: center;
       padding-bottom: 0.25rem;
       border-radius: 2rem;
-      letter-spacing: 0.141rem;     
+      letter-spacing: 0.13rem;
+      margin-top: 0.05rem;
+      padding-left: 0.1rem;    
     }
   }
   [data-width="1200"][data-height="628"] {
     .text-area {
       position: relative;
-      padding-top: 5.5rem;
+      padding-top: 10.4rem;
       padding-left: 3.063rem;
       max-height: 37.25rem;
     }
@@ -614,7 +629,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 0.25rem;
+      padding-bottom: 0.3rem;
+      padding-left: 0.25rem;
       border-radius: 2rem;
       letter-spacing:  0.138rem;   
     }
@@ -625,6 +641,7 @@
       padding-bottom: 5.25rem;
       padding-left: 3.063rem;
       max-height: 41.25rem;
+      padding-top: 10.4rem;
     }
     .subheadline {
       font-size: 1.75rem;
@@ -660,7 +677,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 0.25rem;
+      padding-bottom: 0.3rem;
+      padding-left: 0.25rem;
       border-radius: 2rem;
       letter-spacing: 0.138rem;   
     }
@@ -668,7 +686,7 @@
   [data-width="1200"][data-height="900"] {
     .text-area {
       position: relative;
-      padding-top: 5.9rem;
+      padding-top: 19.1rem;
       padding-left: 3.063rem;
       max-height: 43rem;
     }
@@ -706,7 +724,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 0.25rem;
+      padding-bottom: 0.2rem;
+      padding-left: 0.15rem;
       border-radius: 2rem;
       letter-spacing:  0.138rem;   
     }

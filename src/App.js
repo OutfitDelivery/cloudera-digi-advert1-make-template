@@ -55,18 +55,18 @@ App.propTypes = {
   callToAction: PropTypes.string,
 };
 App.defaultProps = {
-  width: 1080,
-  height: 1080, 
+  width: 300,
+  height: 600, 
   theme: 1,
   contentType: "heading-3", 
-  subheadline: "Analytics", 
-  headlineLine1: "Three ways to achieve", 
-  headlineLine2: "machine learning", 
+  subheadline: "analytics", 
+  headlineLine1: "Experience the ", 
+  headlineLine2: "platfor", 
   headlineLine3: "excellence", 
   headlineLine4: "", 
-  headlineLine5: "", 
+  headlineLine5: "",  
   displayLine: "", 
-  callToAction: "Read the white paper",
+  callToAction: "read the white paper",
 };
 
 
