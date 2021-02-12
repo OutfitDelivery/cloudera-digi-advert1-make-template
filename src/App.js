@@ -22,7 +22,7 @@ function App({
   return (
     <div className="App" data-theme={theme} style={appStyle}>
     <div data-width={width} data-height={height}>
-      <div className="placeholder" style={placeholderBkg}></div>
+      {/*<div className="placeholder" style={placeholderBkg}></div>*/}
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
         <div className="heading">
