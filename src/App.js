@@ -11,17 +11,17 @@ function App({
   width, height, theme, contentType, subheadline, headlineLine1, headlineLine2, headlineLine3, headlineLine4, headlineLine5, headlineSize, displayLine, displayLineSize, displayLinePosition, callToAction}) {
     
     const appStyle = {
-      width: `${width*2}px`,
-      height: `${height*2}px`,
+      width: `${width}px`,
+      height: `${height}px`,
     };
 
     const placeholderBkg = {
-      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width}x${height}.png)`,
+      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width/2}x${height/2}.png)`,
     };
   
   return (
     <div className="App" data-theme={theme} data-headline-size={headlineSize} data-display-line-size={displayLineSize} style={appStyle}>
-    <div data-width={width} data-height={height}>
+    <div data-width={width/2} data-height={height/2}>
       {/*<div className="placeholder" style={placeholderBkg}></div>*/}
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
@@ -58,8 +58,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 1080,
-  height: 1080, 
+  width: 2160,
+  height: 2160, 
   theme: 1,
   contentType: "heading-3", 
   subheadline: "analytics", 
