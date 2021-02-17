@@ -16,12 +16,12 @@ function App({
     };
 
     const placeholderBkg = {
-      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width/2}x${height/2}.png)`,
+      backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width/4}x${height/4}.png)`,
     };
   
   return (
     <div className="App" data-theme={theme} data-headline-size={headlineSize} data-display-line-size={displayLineSize} style={appStyle}>
-    <div data-width={width/2} data-height={height/2}>
+    <div data-width={width/4} data-height={height/4}>
       {/*<div className="placeholder" style={placeholderBkg}></div>*/}
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
         <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
@@ -58,8 +58,8 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 2160,
-  height: 2160, 
+  width: 4320,
+  height: 4320, 
   theme: 1,
   contentType: "heading-3", 
   subheadline: "analytics", 
