@@ -8,11 +8,11 @@ import "./css/theme4.scss";
 
 
 function App({
-  width, height, theme, contentType, subheadline, headlineLine1, headlineLine2, headlineLine3, headlineLine4, headlineLine5, displayLine, callToAction}) {
+  width, height, theme, contentType, subheadline, headlineLine1, headlineLine2, headlineLine3, headlineLine4, headlineLine5, headlineSize, displayLine, displayLineSize, displayLinePosition, callToAction}) {
     
     const appStyle = {
-      width: `${width}px`,
-      height: `${height}px`,
+      width: `${width*2}px`,
+      height: `${height*2}px`,
     };
 
     const placeholderBkg = {
@@ -20,7 +20,7 @@ function App({
     };
   
   return (
-    <div className="App" data-theme={theme} style={appStyle}>
+    <div className="App" data-theme={theme} data-headline-size={headlineSize} data-display-line-size={displayLineSize} style={appStyle}>
     <div data-width={width} data-height={height}>
       {/*<div className="placeholder" style={placeholderBkg}></div>*/}
       <div className="text-area" data-theme={theme} data-text-type={contentType}>
@@ -51,12 +51,15 @@ App.propTypes = {
   headlineLine3: PropTypes.string, 
   headlineLine4: PropTypes.string, 
   headlineLine5: PropTypes.string, 
+  headlineSize: PropTypes.number,
   displayLine: PropTypes.string, 
+  displayLineSize: PropTypes.number,
   callToAction: PropTypes.string,
 };
+
 App.defaultProps = {
-  width: 300,
-  height: 600, 
+  width: 1080,
+  height: 1080, 
   theme: 1,
   contentType: "heading-3", 
   subheadline: "analytics", 
@@ -64,8 +67,10 @@ App.defaultProps = {
   headlineLine2: "machine learning", 
   headlineLine3: "excellence", 
   headlineLine4: "", 
-  headlineLine5: "",  
+  headlineLine5: "",
+  headlineSize: 1,
   displayLine: "", 
+  displayLineSize: 1,
   callToAction: "read the white paper",
 };
 

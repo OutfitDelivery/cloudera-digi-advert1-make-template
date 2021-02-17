@@ -24,6 +24,9 @@
 
 
 [data-theme="1"]{
+  $headlineSize: 1;
+  $displayLineSize: 1;
+
   [data-width="600"][data-height="315"] {
     .text-area {
       margin-top: 5.5rem;
@@ -140,7 +143,7 @@
     }
 
     h1 {
-      font-size: 3.65rem;
+      font-size: calc(3.65rem * #{$headlineSize});
       line-height: 1.12;
     }
 
