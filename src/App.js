@@ -20,7 +20,7 @@ function App({
     };
 
     function conditionalTextCheck(text, classList){
-      return (text.props.children !== "" || text.props.children == null || text.props.children == undefined || text.props.children == "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
+      return (text.props.children !== "" && text.props.children !== "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
     }
 
     var htmlStructure = (
@@ -75,7 +75,7 @@ App.defaultProps = {
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: 1,
-  displayLine: "potential", 
+  displayLine: "null", 
   displayLineSize: 1,
   callToAction: "download",
 };
