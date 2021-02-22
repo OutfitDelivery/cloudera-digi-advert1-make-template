@@ -69,14 +69,14 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width: 2400,
-  height: 1260, 
+  width:1200,
+  height: 200, 
   theme: 4,
   contentType: "heading-3", 
   subheadline: "analytics", 
-  headlineLine1: "How to drive machine", 
-  headlineLine2: "learnings limitless", 
-  headlineLine3: "", 
+  headlineLine1: "three ways to achieve", 
+  headlineLine2: "machine learning", 
+  headlineLine3: "excellence", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1.0",

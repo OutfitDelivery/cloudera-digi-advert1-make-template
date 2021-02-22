@@ -41,6 +41,7 @@
     }
     .call-to-action {
       background-color: #f96702;
+      margin-top: 1.3rem;
     }
   }
   [data-width="300"][data-height="50"] {
@@ -104,6 +105,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 1.2rem;
     }
   }
   [data-width="300"][data-height="600"] {
@@ -133,6 +135,7 @@
     }
     .call-to-action {
       background-color: $dark-orange;
+      margin-top: 1.4rem;
     }
   }
   [data-width="320"][data-height="50"] {
@@ -228,6 +231,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 1.6rem;
     }
   }
   [data-width="640"][data-height="480"] {
@@ -254,6 +258,11 @@
     }
     .heading {
       margin-bottom: 0.063rem;
+    }
+    .display-line {
+      font-size: 3.5rem;
+      padding-top: 0.25rem;
+      max-width: 24rem;
     }
     .call-to-action {
       background-color: $dark-orange;
@@ -393,6 +402,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 3rem;
     }
   }
   [data-width="1080"][data-height="1080"] {
@@ -429,6 +439,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 3rem;
     }
   }
   [data-width="1200"][data-height="628"] {
@@ -465,6 +476,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 3rem;
     }
   }
   [data-width="1200"][data-height="800"] {
@@ -502,6 +514,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white; 
+      margin-top: 2.9rem;
     }
   }
   [data-width="1200"][data-height="900"] {
@@ -538,6 +551,7 @@
     .call-to-action {
       background-color: $dark-orange;
       color: $white;
+      margin-top: 3rem;
     }
   }
 }
