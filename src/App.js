@@ -20,6 +20,7 @@ function App({
     };
 
     function conditionalTextCheck(text, classList){
+      classList += " text-el";
       return (text.props.children !== "" && text.props.children !== "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
     }
 
@@ -29,16 +30,17 @@ function App({
         <div data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType}>
-            <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
+            {conditionalTextCheck(<h2>{subheadline}</h2>, "subheadline")}
+            {displayLinePosition === "top" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1>{headlineLine1}</h1>, "headline line-1 text-el")}
-              {conditionalTextCheck(<h1>{headlineLine2}</h1>, "headline line-2 text-el")}
-              {conditionalTextCheck(<h1>{headlineLine3}</h1>, "headline line-3 text-el")}
-              {conditionalTextCheck(<h1>{headlineLine4}</h1>, "headline line-4 text-el")}
-              {conditionalTextCheck(<h1>{headlineLine5}</h1>, "headline line-5 text-el")}
+              {conditionalTextCheck(<h1>{headlineLine1}</h1>, "headline line-1")}
+              {conditionalTextCheck(<h1>{headlineLine2}</h1>, "headline line-2")}
+              {conditionalTextCheck(<h1>{headlineLine3}</h1>, "headline line-3")}
+              {conditionalTextCheck(<h1>{headlineLine4}</h1>, "headline line-4")}
+              {conditionalTextCheck(<h1>{headlineLine5}</h1>, "headline line-5")}
             </div>
-            {conditionalTextCheck(<h3>{displayLine}</h3>, "display-line text-el")}
-            {conditionalTextCheck(<p data-max-line="1">{callToAction}</p>, "call-to-action text-el")}
+            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
+            {conditionalTextCheck(<p data-max-line="1">{callToAction}</p>, "call-to-action")}
           </div>
         </div>
       </div>
@@ -62,6 +64,7 @@ App.propTypes = {
   headlineSize: PropTypes.string,
   displayLine: PropTypes.string, 
   displayLineSize: PropTypes.number,
+  displayLinePosition: PropTypes.string,
   callToAction: PropTypes.string,
 };
 
@@ -79,6 +82,7 @@ App.defaultProps = {
   headlineSize: "1.0",
   displayLine: "say yes", 
   displayLineSize: 1,
+  displayLinePosition: "bottom",
   callToAction: "download",
 };
 
