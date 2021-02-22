@@ -100,10 +100,6 @@ html {
   font-size: 1rem;
 }
 
-.heading {
-  margin-bottom: 2rem;
-}
-
 h1,
 .call-to-action {
   font-family: "Neue Plak Text";
@@ -142,6 +138,7 @@ h3 {
 
 .call-to-action {
   border-radius: 1rem;
+  margin-top: 1rem;
 }
 
 .call-to-action p {
@@ -386,6 +383,8 @@ h3 {
     display: none;
   }
 }
+
+.placeholder{display: none}
 
 .text-el{
   visibility: hidden;
