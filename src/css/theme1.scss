@@ -432,14 +432,28 @@
   }
   [data-width="320"][data-height="50"] {
 
-    .subheadline, .call-to-action {
+    .subheadline{
       display: none;
     }
+    
     .text-area {
+      background: blue;
       margin-top: 0.5rem;
       margin-left: 6.15rem;
+      margin-right: 0.65rem;
       max-height: 2rem;
-      width: 10.5rem;
+      width: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .call-to-action{
+      background: none;
+      font-family: "Neue Plak Text Semi Bold";
+      font-size: 0.55rem;
+      text-decoration: underline;
+      max-width: 2.8rem;
     }
 
     h1 {
