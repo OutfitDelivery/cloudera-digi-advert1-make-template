@@ -20,7 +20,7 @@ function App({
     };
 
     function conditionalTextCheck(text, classList){
-      return text.props.children !== "" ? (<div className={classList} data-max-line="1">{text}</div>) : "";
+      return (text.props.children !== "" || text.props.children !== null || text.props.children !== undefined) ? (<div className={classList} data-max-line="1">{text}</div>) : "";
     }
 
     var htmlStructure = (
