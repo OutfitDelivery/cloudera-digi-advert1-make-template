@@ -24,10 +24,11 @@ function App({
     }
 
     var htmlStructure = (
-      <div className="App" data-theme={theme} data-headline-size={headlineSize} data-display-line-size={displayLineSize} style={appStyle}>
+      <div data-headline-size={headlineSize} data-display-line-size={displayLineSize}>
+      <div className="App" data-theme={theme} style={appStyle}>
         <div data-width={width/4} data-height={height/4}>
-          <div className="placeholder" style={placeholderBkg}></div>
-          <div className="text-area" data-theme={theme} data-text-type={contentType}>
+            <div className="placeholder" style={placeholderBkg}></div>
+            <div className="text-area" data-theme={theme} data-text-type={contentType}>
             <div className="subheadline text-el" data-max-line="2"><h2>{subheadline}</h2></div>
             <div className="heading">
               {conditionalTextCheck(<h1>{headlineLine1}</h1>, "headline line-1 text-el")}
@@ -40,6 +41,7 @@ function App({
             {conditionalTextCheck(<p data-max-line="1">{callToAction}</p>, "call-to-action text-el")}
           </div>
         </div>
+      </div>
       </div>
     );
   
@@ -57,16 +59,16 @@ App.propTypes = {
   headlineLine3: PropTypes.string, 
   headlineLine4: PropTypes.string, 
   headlineLine5: PropTypes.string, 
-  headlineSize: PropTypes.number,
+  headlineSize: PropTypes.string,
   displayLine: PropTypes.string, 
   displayLineSize: PropTypes.number,
   callToAction: PropTypes.string,
 };
 
 App.defaultProps = {
-  width: 4320,
-  height: 4320, 
-  theme: 2,
+  width: 2400,
+  height: 1260, 
+  theme: 4,
   contentType: "heading-3", 
   subheadline: "analytics", 
   headlineLine1: "How to drive machine", 
@@ -74,8 +76,8 @@ App.defaultProps = {
   headlineLine3: "", 
   headlineLine4: "", 
   headlineLine5: "",
-  headlineSize: 1,
-  displayLine: "null", 
+  headlineSize: "1.0",
+  displayLine: "say yes", 
   displayLineSize: 1,
   callToAction: "download",
 };
