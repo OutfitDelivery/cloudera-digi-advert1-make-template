@@ -23,26 +23,51 @@ function App({
       classList += " text-el";
       let textChild = text.props.children;
       try{textChild = textChild.props.children} catch(e){}
-      return (textChild !== "" && textChild !== "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
+      return (textChild !== "" && textChild !== "null") ? (<div className={classList}>{text}</div>) : "";
+    }
+
+
+    function heightStuff(el, maxLine){
+      let elHeight = el.getBoundingClientRect().height;
+      let innerSpan = el.querySelector("span");
+      let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
+      let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
+      //console.log("Font Size " + fontSize);
+      //console.log("Line Size " + lineHeight);
+      var lines = parseInt(elHeight) / parseInt(lineHeight); 
+      //console.log(Math.round(lines))
+      if(Math.round(lines) > maxLine){
+        el.className = "overflow";
+      }
+    }
+
+    function maxHeight(el){
+      let elHeight = el.getBoundingClientRect().height;
+      let maxheight = window.getComputedStyle(el).maxHeight;
+      console.log(elHeight);
+      console.log(maxheight);
+      if(parseInt(elHeight) >= parseInt(maxheight)){
+        el.className = "overflow " + "text-area";
+      }
     }
 
     var htmlStructure = (
       <div data-headline-size={headlineSize} data-display-line-size={displayLineSize}>
-      <div id="test" className="App" data-theme={theme} style={appStyle}>
+      <div className="App" data-theme={theme} style={appStyle}>
         <div data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
-            <div className="text-area" data-theme={theme} data-text-type={contentType}>
-            {conditionalTextCheck(<h2>{subheadline}</h2>, "subheadline")}
+            <div className="text-area" data-theme={theme} data-text-type={contentType} ref={el=>maxHeight(el)}>
+            {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 2)}}>{subheadline}</h2>, "subheadline")}
             {displayLinePosition === "top" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1><span>{headlineLine1}</span></h1>, "headline line-1")}
-              {conditionalTextCheck(<h1><span>{headlineLine2}</span></h1>, "headline line-2")}
-              {conditionalTextCheck(<h1><span>{headlineLine3}</span></h1>, "headline line-3")}
-              {conditionalTextCheck(<h1><span>{headlineLine4}</span></h1>, "headline line-4")}
-              {conditionalTextCheck(<h1><span>{headlineLine5}</span></h1>, "headline line-5")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine2}</span></h1>, "headline line-2")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine3}</span></h1>, "headline line-3")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine4}</span></h1>, "headline line-4")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine5}</span></h1>, "headline line-5")}
             </div>
-            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
-            {conditionalTextCheck(<p data-max-line="1">{callToAction}</p>, "call-to-action")}
+            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1)}}>{displayLine}</h3>, "display-line") : ""}
+            {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
           </div>
         </div>
       </div>
@@ -65,7 +90,7 @@ App.propTypes = {
   headlineLine5: PropTypes.string, 
   headlineSize: PropTypes.string,
   displayLine: PropTypes.string, 
-  displayLineSize: PropTypes.number,
+  displayLineSize: PropTypes.string,
   displayLinePosition: PropTypes.string,
   callToAction: PropTypes.string,
 };
@@ -76,14 +101,14 @@ App.defaultProps = {
   theme: 4,
   contentType: "heading-1", 
   subheadline: "analytics", 
-  headlineLine1: "three ways to achieve", 
+  headlineLine1: "three ways to achieve over", 
   headlineLine2: "machine learning", 
-  headlineLine3: "excellence", 
+  headlineLine3: "", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
   displayLine: "say yes", 
-  displayLineSize: 1,
+  displayLineSize: "1",
   displayLinePosition: "bottom",
   callToAction: "download",
 };
