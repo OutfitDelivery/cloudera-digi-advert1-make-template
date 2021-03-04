@@ -26,18 +26,18 @@ function App({
 
     var htmlStructure = (
       <div data-headline-size={headlineSize} data-display-line-size={displayLineSize}>
-      <div className="App" data-theme={theme} style={appStyle}>
+      <div id="test" className="App" data-theme={theme} style={appStyle}>
         <div data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType}>
             {conditionalTextCheck(<h2>{subheadline}</h2>, "subheadline")}
             {displayLinePosition === "top" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1>{headlineLine1}</h1>, "headline line-1")}
-              {conditionalTextCheck(<h1>{headlineLine2}</h1>, "headline line-2")}
-              {conditionalTextCheck(<h1>{headlineLine3}</h1>, "headline line-3")}
-              {conditionalTextCheck(<h1>{headlineLine4}</h1>, "headline line-4")}
-              {conditionalTextCheck(<h1>{headlineLine5}</h1>, "headline line-5")}
+              {conditionalTextCheck(<h1><span>{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1><span>{headlineLine2}</span></h1>, "headline line-2")}
+              {conditionalTextCheck(<h1><span>{headlineLine3}</span></h1>, "headline line-3")}
+              {conditionalTextCheck(<h1><span>{headlineLine4}</span></h1>, "headline line-4")}
+              {conditionalTextCheck(<h1><span>{headlineLine5}</span></h1>, "headline line-5")}
             </div>
             {displayLinePosition === "bottom" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
             {conditionalTextCheck(<p data-max-line="1">{callToAction}</p>, "call-to-action")}
@@ -69,17 +69,17 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:1200,
-  height: 200, 
+  width:4320,
+  height:4320, 
   theme: 4,
-  contentType: "heading-3", 
+  contentType: "heading-1", 
   subheadline: "analytics", 
   headlineLine1: "three ways to achieve", 
   headlineLine2: "machine learning", 
   headlineLine3: "excellence", 
   headlineLine4: "", 
   headlineLine5: "",
-  headlineSize: "1.0",
+  headlineSize: "1",
   displayLine: "say yes", 
   displayLineSize: 1,
   displayLinePosition: "bottom",
