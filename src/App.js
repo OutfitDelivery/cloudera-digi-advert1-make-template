@@ -21,7 +21,9 @@ function App({
 
     function conditionalTextCheck(text, classList){
       classList += " text-el";
-      return (text.props.children !== "" && text.props.children !== "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
+      let textChild = text.props.children;
+      try{textChild = textChild.props.children} catch(e){}
+      return (textChild !== "" && textChild !== "null") ? (<div className={classList} data-max-line="1">{text}</div>) : "";
     }
 
     var htmlStructure = (
