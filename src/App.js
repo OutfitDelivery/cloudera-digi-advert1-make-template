@@ -32,10 +32,12 @@ function App({
       let innerSpan = el.querySelector("span");
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      //console.log("Font Size " + fontSize);
-      //console.log("Line Size " + lineHeight);
+      console.log("Font Size " + fontSize);
+      console.log("Line Size " + lineHeight);
       var lines = parseInt(elHeight) / parseInt(lineHeight); 
-      //console.log(Math.round(lines))
+      
+      lines = (lines > 0 && lines < 1) ? 1 : Math.floor(lines);
+      console.log(lines)
       if(Math.round(lines) > maxLine){
         el.className = "overflow";
       }
@@ -49,6 +51,11 @@ function App({
       if(parseInt(elHeight) >= parseInt(maxheight)){
         el.className = "overflow " + "text-area";
       }
+    }
+
+    function between (lower, upper) {
+      var scale = upper - lower + 1;
+      return Math.floor(lower + Math.random() * scale);
     }
 
     var htmlStructure = (
