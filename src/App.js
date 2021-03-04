@@ -35,7 +35,7 @@ function App({
             {conditionalTextCheck(<h2>{subheadline}</h2>, "subheadline")}
             {displayLinePosition === "top" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1><span>{headlineSize}{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1><span>{headlineLine1}</span></h1>, "headline line-1")}
               {conditionalTextCheck(<h1><span>{headlineLine2}</span></h1>, "headline line-2")}
               {conditionalTextCheck(<h1><span>{headlineLine3}</span></h1>, "headline line-3")}
               {conditionalTextCheck(<h1><span>{headlineLine4}</span></h1>, "headline line-4")}
