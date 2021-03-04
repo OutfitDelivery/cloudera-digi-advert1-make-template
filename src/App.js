@@ -44,7 +44,7 @@ function App({
     }
 
     function maxHeight(el){
-      let elHeight = el.getBoundingClientRect().height;
+      let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
       let maxheight = window.getComputedStyle(el).maxHeight;
       console.log(elHeight);
       console.log(maxheight);
@@ -105,12 +105,12 @@ App.propTypes = {
 App.defaultProps = {
   width:4800,
   height:2512, 
-  theme: 4,
+  theme: 1,
   contentType: "heading-1", 
   subheadline: "analytics", 
-  headlineLine1: "three ways to achieve over", 
+  headlineLine1: "three ways to achieve", 
   headlineLine2: "machine learning", 
-  headlineLine3: "", 
+  headlineLine3: "excellence", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
