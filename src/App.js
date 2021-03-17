@@ -34,6 +34,7 @@ function App({
       console.log("Font Size " + fontSize);
       console.log("Line Size " + lineHeight);
       var lines = parseInt(elHeight) / parseInt(lineHeight); 
+      el.innerHTML = lines;
       
       lines = (lines > 0 && lines < 1) ? 1 : Math.floor(lines);
       console.log(lines)
