@@ -34,10 +34,10 @@ function App({
       console.log("Font Size " + fontSize);
       console.log("Line Size " + lineHeight);
       var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
-      el.innerHTML = lines;
+      //el.innerHTML = lines;
       
-      lines = (lines > 0 && lines < 1) ? 1 : Math.floor(lines);
-      console.log(lines)
+      lines = (lines > 0 && lines < 1) ? 1 : Math.trunc(lines);
+      //console.log(lines)
       if(lines > maxLine){
         el.className = "overflow";
       }
@@ -103,21 +103,21 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:2400,
-  height:1260, 
-  theme: 4,
+  width:1200,
+  height:1000, 
+  theme: 3,
   contentType: "heading-1", 
-  subheadline: "Cloudera Data Platform", 
-  headlineLine1: "Experience the data", 
-  headlineLine2: "platform that lets you", 
-  headlineLine3: "", 
+  subheadline: "Virtual Event", 
+  headlineLine1: "See the Cloudera", 
+  headlineLine2: "Data Platform (CDP)", 
+  headlineLine3: "in action", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
-  displayLine: "say yes", 
+  displayLine: "", 
   displayLineSize: "1",
   displayLinePosition: "bottom",
-  callToAction: "download",
+  callToAction: "Register Now",
 };
 
 
