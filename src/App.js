@@ -26,7 +26,6 @@ function App({
       return (textChild !== "" && textChild !== "null") ? (<div className={classList}>{text}</div>) : "";
     }
 
-
     function heightStuff(el, maxLine){
       let elHeight = el.getBoundingClientRect().height;
       let innerSpan = el.querySelector("span");
@@ -38,7 +37,7 @@ function App({
       
       lines = (lines > 0 && lines < 1) ? 1 : Math.floor(lines);
       console.log(lines)
-      if(Math.round(lines) > maxLine){
+      if(lines > maxLine){
         el.className = "overflow";
       }
     }
@@ -103,14 +102,14 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:4800,
-  height:2512, 
-  theme: 1,
+  width:2400,
+  height:1260, 
+  theme: 4,
   contentType: "heading-1", 
-  subheadline: "analytics", 
-  headlineLine1: "three ways to achieve", 
-  headlineLine2: "machine learning", 
-  headlineLine3: "excellence", 
+  subheadline: "Cloudera Data Platform", 
+  headlineLine1: "Experience the data", 
+  headlineLine2: "platform that lets you", 
+  headlineLine3: "", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
