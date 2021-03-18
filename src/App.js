@@ -45,12 +45,12 @@ function App({
     }
 
     function maxHeight(el){
-      let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
-      let maxheight = window.getComputedStyle(el).maxHeight;
-      //console.log(elHeight);
-      //console.log(maxheight);
-      if(parseInt(elHeight) >= parseInt(maxheight)){
-        el.className = "overflow " + "text-area";
+      if(!((width == 320 && height == 50) || (width == 300 && height == 50))){
+        let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
+        let maxheight = window.getComputedStyle(el).maxHeight;
+        if(parseInt(elHeight) >= parseInt(maxheight)){
+          el.className = "overflow " + "text-area";
+        }
       }
     }
 
