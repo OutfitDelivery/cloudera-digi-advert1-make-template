@@ -65,8 +65,8 @@ function App({
         <div data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType} ref={el=>maxHeight(el)}>
-            {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 2)}}>{subheadline}</h2>, "subheadline")}
-            {displayLinePosition === "top" ? conditionalTextCheck(<h3>{displayLine}</h3>, "display-line") : ""}
+            {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 3)}}>{subheadline}</h2>, "subheadline")}
+            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1)}}>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
               {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine1}</span></h1>, "headline line-1")}
               {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine2}</span></h1>, "headline line-2")}
@@ -105,12 +105,12 @@ App.propTypes = {
 
 App.defaultProps = {
   width:1200,
-  height:1000, 
-  theme: 3,
+  height:200, 
+  theme: 4,
   contentType: "heading-1", 
-  subheadline: "Virtual Event", 
-  headlineLine1: "See the Cloudera", 
-  headlineLine2: "Data Platform (CDP)", 
+  subheadline: "", 
+  headlineLine1: "Experience the platform", 
+  headlineLine2: "that lets you say yes", 
   headlineLine3: "in action", 
   headlineLine4: "", 
   headlineLine5: "",
@@ -118,7 +118,7 @@ App.defaultProps = {
   displayLine: "", 
   displayLineSize: "1",
   displayLinePosition: "bottom",
-  callToAction: "Register Now",
+  callToAction: "Watch",
 };
 
 
