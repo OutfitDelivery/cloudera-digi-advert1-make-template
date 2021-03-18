@@ -39,7 +39,7 @@ function App({
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
       //el.innerHTML = el.innerHTML + " " + lines;
-      if(elHeight > (limitHeight + 10)){
+      if(elHeight > (limitHeight + 20)){
         el.className = "overflow";
       }
     }
