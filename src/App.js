@@ -33,13 +33,11 @@ function App({
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
       let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
       //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
-      console.log(limitHeight);
-      console.log(elHeight);
-      console.log()
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
       //el.innerHTML = el.innerHTML + " " + lines;
-      if(elHeight > (limitHeight + 20)){
+      el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
+      if(elHeight > (limitHeight)){
         el.className = "overflow";
       }
     }
