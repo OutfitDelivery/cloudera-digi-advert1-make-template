@@ -45,7 +45,7 @@ function App({
     }
 
     function maxHeight(el){
-      if(!((width == 320 && height == 50) || (width == 300 && height == 50))){
+      if(!((width == 1280 && height == 200) || (width == 1200 && height == 200))){
         let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
         let maxheight = window.getComputedStyle(el).maxHeight;
         if(parseInt(elHeight) >= parseInt(maxheight)){
