@@ -34,10 +34,10 @@ function App({
       console.log("Font Size " + fontSize);
       console.log("Line Size " + lineHeight);
       var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
-      //el.innerHTML = lines;
       
-      lines = (lines > 0 && lines < 1) ? 1 : Math.trunc(lines);
-      //console.log(lines)
+      
+      lines = (lines > 0 && lines < 1) ? 1 : lines;
+      el.innerHTML = el.innerHTML + " " + lines;
       if(lines > maxLine){
         el.className = "overflow";
       }
