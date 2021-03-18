@@ -31,14 +31,15 @@ function App({
       let innerSpan = el.querySelector("span");
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      console.log("Font Size " + fontSize);
-      console.log("Line Size " + lineHeight);
-      var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
+      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
+      //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
+      console.log(limitHeight);
+      console.log(elHeight);
+      console.log()
       
-      
-      lines = (lines > 0 && lines < 1) ? 1 : lines;
-      el.innerHTML = el.innerHTML + " " + lines;
-      if(lines > maxLine){
+      //lines = (lines > 0 && lines < 1) ? 1 : lines;
+      //el.innerHTML = el.innerHTML + " " + lines;
+      if(elHeight > limitHeight){
         el.className = "overflow";
       }
     }
@@ -46,8 +47,8 @@ function App({
     function maxHeight(el){
       let elHeight = parseInt(window.getComputedStyle(el).height) - parseInt(window.getComputedStyle(el).paddingTop) - parseInt(window.getComputedStyle(el).paddingBottom);
       let maxheight = window.getComputedStyle(el).maxHeight;
-      console.log(elHeight);
-      console.log(maxheight);
+      //console.log(elHeight);
+      //console.log(maxheight);
       if(parseInt(elHeight) >= parseInt(maxheight)){
         el.className = "overflow " + "text-area";
       }
