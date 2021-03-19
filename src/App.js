@@ -42,7 +42,7 @@ function App({
       }
 
       if(name == "line2"){
-        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight}`;
+        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Height: ${innerSpan.getBoundingClientRect().height}`;
       }
     }
 
