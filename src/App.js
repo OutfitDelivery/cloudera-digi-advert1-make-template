@@ -31,7 +31,7 @@ function App({
       let elHeight = /*innerSpan != null ? window.getComputedStyle(innerSpan).height :*/ window.getComputedStyle(el).height;
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
+      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) - 10);
       //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
@@ -68,15 +68,15 @@ function App({
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType} ref={el=>maxHeight(el)}>
             {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 3)}}>{subheadline}</h2>, "subheadline")}
-            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
+            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.4)}}>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line1")}}><span>{headlineLine1}</span></h1>, "headline line-1")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line2")}}><span>{headlineLine2}</span></h1>, "headline line-2")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line3")}}><span>{headlineLine3}</span></h1>, "headline line-3")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line4")}}><span>{headlineLine4}</span></h1>, "headline line-4")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line5")}}><span>{headlineLine5}</span></h1>, "headline line-5")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line1")}}><span>{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line2")}}><span>{headlineLine2}</span></h1>, "headline line-2")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line3")}}><span>{headlineLine3}</span></h1>, "headline line-3")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line4")}}><span>{headlineLine4}</span></h1>, "headline line-4")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line5")}}><span>{headlineLine5}</span></h1>, "headline line-5")}
             </div>
-            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
+            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.4)}}>{displayLine}</h3>, "display-line") : ""}
             {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
           </div>
         </div>
@@ -109,12 +109,12 @@ App.propTypes = {
 App.defaultProps = {
   width:2400,
   height:1260, 
-  theme: 2,
+  theme: 4,
   contentType: "heading-2", 
   subheadline: "", 
-  headlineLine1: "Experience the platform", 
-  headlineLine2: "that lets you say yes", 
-  headlineLine3: "in action", 
+  headlineLine1: "How to drive machine", 
+  headlineLine2: "platform that lets you", 
+  headlineLine3: "", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
