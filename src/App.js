@@ -28,15 +28,9 @@ function App({
 
     function heightStuff(el, maxLine, name = null){
       let innerSpan = el.querySelector("span");
-      let elHeight = /*innerSpan != null ? window.getComputedStyle(innerSpan).height :*/ window.getComputedStyle(el).height;
-      let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
+      let elHeight = window.getComputedStyle(el).height;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
       let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) - 10);
-      //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
-      
-      //lines = (lines > 0 && lines < 1) ? 1 : lines;
-      //el.innerHTML = el.innerHTML + " " + lines;
-      //el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
       if(parseFloat(elHeight) > limitHeight){
         el.className = "overflow";
       }
@@ -80,7 +74,7 @@ function App({
             {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
           </div>
         </div>
-        <div className="console"></div>
+        {/*<div className="console"></div>*/}
       </div>
       </div>
     );
