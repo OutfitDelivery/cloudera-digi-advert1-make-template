@@ -64,15 +64,15 @@ function App({
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType} ref={el=>maxHeight(el)}>
             {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 3)}}>{subheadline}</h2>, "subheadline")}
-            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1)}}>{displayLine}</h3>, "display-line") : ""}
+            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine1}</span></h1>, "headline line-1")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine2}</span></h1>, "headline line-2")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine3}</span></h1>, "headline line-3")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine4}</span></h1>, "headline line-4")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1)}}><span>{headlineLine5}</span></h1>, "headline line-5")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine2}</span></h1>, "headline line-2")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine3}</span></h1>, "headline line-3")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine4}</span></h1>, "headline line-4")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine5}</span></h1>, "headline line-5")}
             </div>
-            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1)}}>{displayLine}</h3>, "display-line") : ""}
+            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
             {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
           </div>
         </div>
