@@ -28,7 +28,7 @@ function App({
 
     function heightStuff(el, maxLine, name = null){
       let innerSpan = el.querySelector("span");
-      let elHeight = innerSpan != null ? innerSpan.getComputedStyle(height) : el.getComputedStyle(height);
+      let elHeight = /*innerSpan != null ? window.getComputedStyle(innerSpan).height :*/ window.getComputedStyle(el).height;
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
       let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
@@ -37,12 +37,12 @@ function App({
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
       //el.innerHTML = el.innerHTML + " " + lines;
       //el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
-      if(elHeight > (limitHeight)){
+      if(parseFloat(elHeight) > limitHeight){
         el.className = "overflow";
       }
 
       if(name == "line2"){
-        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Bounding: ${innerSpan.getBoundingClientRect().height} <br> Inner Span CSS Computed: ${innerSpan.getComputedStyle(height)}`;
+        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Bounding: ${innerSpan.getBoundingClientRect().height} <br> Inner Span CSS Computed: ${window.getComputedStyle(el).height}`;
       }
     }
 
