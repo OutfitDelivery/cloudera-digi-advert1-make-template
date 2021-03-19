@@ -38,7 +38,7 @@ function App({
       //el.innerHTML = el.innerHTML + " " + lines;
       //el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
       if(elHeight > (limitHeight)){
-        el.className = "overflow";
+        //el.className = "overflow";
       }
 
       if(name == "line2"){
