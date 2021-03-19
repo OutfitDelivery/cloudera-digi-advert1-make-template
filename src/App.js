@@ -38,11 +38,11 @@ function App({
       //el.innerHTML = el.innerHTML + " " + lines;
       //el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
       if(elHeight > (limitHeight)){
-        //el.className = "overflow";
+        el.className = "overflow";
       }
 
       if(name == "line2"){
-        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight}`;
+        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight}`;
       }
     }
 
