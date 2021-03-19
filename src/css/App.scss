@@ -442,6 +442,18 @@ h3 {
   background-color: $bright-orange;
 }*/
 
+.console {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 200px;
+  background: white;
+  border: 3px solid red;
+  color: black;
+  font-size: 0.4rem;
+}
+
 .placeholder{display: none}
 
 .text-el{

@@ -26,12 +26,12 @@ function App({
       return (textChild !== "" && textChild !== "null") ? (<div className={classList}>{text}</div>) : "";
     }
 
-    function heightStuff(el, maxLine){
+    function heightStuff(el, maxLine, name = null){
       let innerSpan = el.querySelector("span");
       let elHeight = innerSpan != null ? innerSpan.getBoundingClientRect().height : el.getBoundingClientRect().height;
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight));
+      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
       //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
@@ -39,6 +39,10 @@ function App({
       //el.innerHTML = el.innerHTML + elHeight + " " + limitHeight;
       if(elHeight > (limitHeight)){
         el.className = "overflow";
+      }
+
+      if(name == "line2"){
+        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight}`;
       }
     }
 
@@ -66,16 +70,17 @@ function App({
             {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 3)}}>{subheadline}</h2>, "subheadline")}
             {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine1}</span></h1>, "headline line-1")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine2}</span></h1>, "headline line-2")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine3}</span></h1>, "headline line-3")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine4}</span></h1>, "headline line-4")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25)}}><span>{headlineLine5}</span></h1>, "headline line-5")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line1")}}><span>{headlineLine1}</span></h1>, "headline line-1")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line2")}}><span>{headlineLine2}</span></h1>, "headline line-2")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line3")}}><span>{headlineLine3}</span></h1>, "headline line-3")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line4")}}><span>{headlineLine4}</span></h1>, "headline line-4")}
+              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.25, "line5")}}><span>{headlineLine5}</span></h1>, "headline line-5")}
             </div>
             {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.25)}}>{displayLine}</h3>, "display-line") : ""}
             {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
           </div>
         </div>
+        <div className="console"></div>
       </div>
       </div>
     );
