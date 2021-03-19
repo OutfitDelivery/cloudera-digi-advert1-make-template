@@ -27,11 +27,11 @@ function App({
     }
 
     function heightStuff(el, maxLine){
-      let elHeight = el.getBoundingClientRect().height;
       let innerSpan = el.querySelector("span");
+      let elHeight = innerSpan != null ? innerSpan.getBoundingClientRect().height : el.getBoundingClientRect().height;
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) - 10);
+      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight));
       //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
@@ -102,10 +102,10 @@ App.propTypes = {
 };
 
 App.defaultProps = {
-  width:1200,
-  height:200, 
-  theme: 4,
-  contentType: "heading-1", 
+  width:2400,
+  height:1260, 
+  theme: 2,
+  contentType: "heading-2", 
   subheadline: "", 
   headlineLine1: "Experience the platform", 
   headlineLine2: "that lets you say yes", 
