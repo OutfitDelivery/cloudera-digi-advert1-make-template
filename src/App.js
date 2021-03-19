@@ -28,7 +28,7 @@ function App({
 
     function heightStuff(el, maxLine, name = null){
       let innerSpan = el.querySelector("span");
-      let elHeight = innerSpan != null ? innerSpan.getBoundingClientRect().height : el.getBoundingClientRect().height;
+      let elHeight = innerSpan != null ? innerSpan.getComputedStyle(height) : el.getComputedStyle(height);
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
       let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
@@ -42,7 +42,7 @@ function App({
       }
 
       if(name == "line2"){
-        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Height: ${innerSpan.getBoundingClientRect().height}`;
+        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Bounding: ${innerSpan.getBoundingClientRect().height} <br> Inner Span CSS Computed: ${innerSpan.getComputedStyle(height)}`;
       }
     }
 
