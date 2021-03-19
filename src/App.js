@@ -31,7 +31,7 @@ function App({
       let elHeight = innerSpan != null ? innerSpan.getBoundingClientRect().height : el.getBoundingClientRect().height;
       let fontSize = innerSpan != null ? window.getComputedStyle(innerSpan).fontSize : window.getComputedStyle(el).fontSize;
       let lineHeight = innerSpan != null ? window.getComputedStyle(innerSpan).lineHeight : window.getComputedStyle(el).lineHeight;
-      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight));
+      let limitHeight = parseFloat(lineHeight) * maxLine + (parseFloat(lineHeight) / 2);
       //var lines = parseFloat(elHeight) / parseFloat(lineHeight); 
       
       //lines = (lines > 0 && lines < 1) ? 1 : lines;
