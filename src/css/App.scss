@@ -390,6 +390,13 @@ h3 {
   border: 0.2rem dashed red;
 }
 
+.text-el h1 span,
+.text-el h2 span,
+.text-el h3 span,
+.text-el p span{
+    white-space: pre-line;
+}
+
 [data-headline-size="0.5"]{ h1 span {font-size:calc(0.5 * 100%);} h1{line-height:calc(0.5) !important;} }
 [data-headline-size="0.55"]{ h1 span {font-size:calc(0.55 * 100%);} h1{line-height:calc(0.55) !important;} }
 [data-headline-size="0.6"]{ h1 span {font-size:calc(0.6 * 100%);} h1{line-height:calc(0.6) !important;} }

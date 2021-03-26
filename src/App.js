@@ -7,9 +7,9 @@ import "./css/theme3.scss";
 import "./css/theme4.scss";
 
 
+
 function App({
   width, height, theme, contentType, subheadline, headlineLine1, headlineLine2, headlineLine3, headlineLine4, headlineLine5, headlineSize, displayLine, displayLineSize, displayLinePosition, callToAction}) {
-    
     const appStyle = {
       width: `${width}px`,
       height: `${height}px`,
@@ -19,11 +19,14 @@ function App({
       backgroundImage: `url(https://cdn.jsdelivr.net/gh/OutfitDelivery/cloudera-digi-advert1-make-template@master/src/assets/Placeholder/Theme${theme}/${width/4}x${height/4}.png)`,
     };
 
-    function conditionalTextCheck(text, classList){
+    function conditionalTextCheck(text, classList, elementType){
+      if(text == "" || text == "null") return "";
       classList += " text-el";
-      let textChild = text.props.children;
-      try{textChild = textChild.props.children} catch(e){}
-      return (textChild !== "" && textChild !== "null") ? (<div className={classList}>{text}</div>) : "";
+      /**/
+      text = text.split("[break]").join("\n");
+      let innerElement = <span>{text}</span>;
+      switch(elementType){case "h1":innerElement = <h1>{innerElement}</h1>;break;case "h2":innerElement = <h2>{innerElement}</h2>;break;case "h3":innerElement = <h3>{innerElement}</h3>;break;case "p":innerElement = <p>{innerElement}</p>;break;}
+      return  <div className={classList}>{innerElement}</div>
     }
 
     function heightStuff(el, maxLine, name = null){
@@ -35,10 +38,6 @@ function App({
       if(parseFloat(elHeight) > limitHeight){
         el.className = "overflow";
       }
-
-      /*if(name == "line2"){
-        document.querySelector(".console").innerHTML += `Element Height: ${elHeight} <br> Limit Height: ${limitHeight} <br> Line Height: ${lineHeight} <br> Inner Span Bounding: ${innerSpan.getBoundingClientRect().height} <br> Inner Span CSS Computed: ${window.getComputedStyle(el).height}`;
-      }*/
     }
 
     function maxHeight(el){
@@ -62,17 +61,18 @@ function App({
         <div data-width={width/4} data-height={height/4}>
             <div className="placeholder" style={placeholderBkg}></div>
             <div className="text-area" data-theme={theme} data-text-type={contentType} ref={el=>maxHeight(el)}>
-            {conditionalTextCheck(<h2 ref={el=>{heightStuff(el, 3)}}>{subheadline}</h2>, "subheadline")}
-            {displayLinePosition === "top" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.4)}}>{displayLine}</h3>, "display-line") : ""}
+              
+            {conditionalTextCheck(subheadline, "subheadline", "h2")}
+            {displayLinePosition === "top" ? conditionalTextCheck(displayLine, "display-line", "h3") : ""}
             <div className="heading">
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line1")}}><span>{headlineLine1}</span></h1>, "headline line-1")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line2")}}><span>{headlineLine2}</span></h1>, "headline line-2")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line3")}}><span>{headlineLine3}</span></h1>, "headline line-3")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line4")}}><span>{headlineLine4}</span></h1>, "headline line-4")}
-              {conditionalTextCheck(<h1 ref={el=>{heightStuff(el, 1.4, "line5")}}><span>{headlineLine5}</span></h1>, "headline line-5")}
+              {conditionalTextCheck(headlineLine1, "headline line-1", "h1")}
+              {conditionalTextCheck(headlineLine2, "headline line-2", "h1")}
+              {conditionalTextCheck(headlineLine3, "headline line-3", "h1")}
+              {conditionalTextCheck(headlineLine4, "headline line-4", "h1")}
+              {conditionalTextCheck(headlineLine5, "headline line-5", "h1")}
             </div>
-            {displayLinePosition === "bottom" ? conditionalTextCheck(<h3 ref={el=>{heightStuff(el, 1.4)}}>{displayLine}</h3>, "display-line") : ""}
-            {conditionalTextCheck(<p ref={el=>{heightStuff(el, 1)}}>{callToAction}</p>, "call-to-action")}
+            {displayLinePosition === "bottom" ? conditionalTextCheck(displayLine, "display-line", "h3") : ""}
+            {conditionalTextCheck(callToAction, "call-to-action", "p")}
           </div>
         </div>
       </div>
@@ -105,14 +105,14 @@ App.defaultProps = {
   height:1260, 
   theme: 4,
   contentType: "heading-2", 
-  subheadline: "", 
-  headlineLine1: "How to drive machine", 
-  headlineLine2: "platform that lets you", 
+  subheadline: "Subheadline", 
+  headlineLine1: "How to drive machine platform [break] that lets you", 
+  headlineLine2: "", 
   headlineLine3: "", 
   headlineLine4: "", 
   headlineLine5: "",
   headlineSize: "1",
-  displayLine: "", 
+  displayLine: "Display", 
   displayLineSize: "1",
   displayLinePosition: "bottom",
   callToAction: "Watch",
